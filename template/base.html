@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %} | Hire Local Workers Online</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/generative-ai": "https://esm.run/@google/generative-ai"
+        }
+      }
+    </script>
+</head>
+
+<body>
+    <header class="wrapper">
+        <nav class="multi_color_border"></nav>
+        <nav class="top_nav">
+            <div class="left">
+              <div class="logo"><a href="/"><img src="/static/img/logo.png" alt="logo"></a></div>
+              <form action="#" class = "search-bar">
+                <input type="text" placeholder="Search">
+                <button type="submit"><i class='bx bx-search'></i></button>
+              </form>
+            </div> 
+          <div class="right">
+            <ul>
+              <li><a href="/workerregistration">Register as a Worker</a></li>
+              <li><a href="/loginn">LogIn</a></li>
+              <li><a href="/register">Register</a></li>
+              <li><a href="/postjob">Post a Job</a></li>
+            </ul>
+          </div>
+        </nav>
+        <nav class="bottom_nav">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/community">Chat </a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+          </ul>
+        </nav>
+    </header>
+
+    {% comment %} {% if messages% %}{% endif %}
+    {% for message in messages %}{% endfor %}
+    <div class="successmessage {{message.tags}}">
+      {{message}}
+    </div>
+    {% endfor %} {% endcomment %}
+    {% block body %}{% endblock body %}
+
+
+</body>
+
+
+
+</html>
